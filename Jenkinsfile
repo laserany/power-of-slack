@@ -8,7 +8,7 @@ pipeline {
         }
         stage('send notifications to slack') {
             steps {
-                slackSend (channel: "#jenkins", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}")
+                slackSend (color: "good", channel: "#jenkins", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}")
             }
         }
     }
